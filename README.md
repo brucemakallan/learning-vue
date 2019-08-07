@@ -5,6 +5,11 @@ Cheat Sheet: https://www.vuemastery.com/pdf/Vue-Essentials-Cheat-Sheet.pdf
 Official Guild: https://vuejs.org/v2/guide/
 
 #### Installation
+
+**Recommended:** Use Vue CLI: https://cli.vuejs.org/
+
+Alternative:
+
 ```
 npm install vue
 ```
