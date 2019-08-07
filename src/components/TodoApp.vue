@@ -15,10 +15,14 @@
 
     <button type="button" v-on:click="reverseMessage">Reverse Heading</button>
     <input type="text" name="age" id="age" v-model="age">
+
+    <TodoElement v-for="(todo, index) in todos" :key="index" :todo="todo"/>
   </div>
 </template>
 
 <script>
+import TodoElement from "./TodoElement.vue";
+
 export default {
   name: "TodoApp",
   props: {
@@ -54,10 +58,12 @@ export default {
         .reverse()
         .join("");
     }
+  },
+  components: {
+    TodoElement
   }
 };
 </script>
 
-<style lang="sass" scoped>
-
+<style lang="scss" scoped>
 </style>
