@@ -1,0 +1,12 @@
+{
+  "name": "learning-vue",
+  "version": "1.0.0",
+  "description": "Learning Vue",
+  "main": "index.js",
+  "repository": "https://github.com/brucemakallan/learning-vue.git",
+  "author": "<brucemakallan@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^2.6.10"
+  }
+}
