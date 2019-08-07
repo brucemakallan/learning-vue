@@ -4,6 +4,12 @@
     <p>{{ heart }}</p>
     <span :title="hoverMessage">Hover to see today's date</span>
     <div v-if="visible">Visible</div>
+    <ul>
+      <li v-for="(todo, index) in todos" :key="index">
+        <span>{{ todo.title }}</span>
+        <span v-if="todo.completed">✅</span>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -17,7 +23,21 @@ export default {
     return {
       heart: "💖",
       hoverMessage: new Date().toLocaleString(),
-      visible: true
+      visible: true,
+      todos: [
+        {
+          title: "Getting started",
+          completed: false
+        },
+        {
+          title: "Buy Milk",
+          completed: true
+        },
+        {
+          title: "Kill Hitler",
+          completed: false
+        }
+      ]
     };
   }
 };
