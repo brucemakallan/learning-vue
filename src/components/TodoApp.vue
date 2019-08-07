@@ -1,12 +1,14 @@
 <template>
   <div class="todo_app">
-    Todo App
+    Todo App msg = {{ msg }}
   </div>
 </template>
 
 <script>
 export default {
-  
+  props: {
+    msg: String
+  }  
 }
 </script>
 
