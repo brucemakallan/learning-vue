@@ -3,6 +3,7 @@
     <p>Todo App msg = {{ msg }}</p>
     <p>{{ heart }}</p>
     <span :title="hoverMessage">Hover to see today's date</span>
+    <div v-if="visible">Visible</div>
   </div>
 </template>
 
@@ -15,7 +16,8 @@ export default {
   data() {
     return {
       heart: "💖",
-      hoverMessage: new Date().toLocaleString()
+      hoverMessage: new Date().toLocaleString(),
+      visible: true
     };
   }
 };
