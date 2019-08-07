@@ -5,13 +5,16 @@
     <p>{{ heart }}</p>
     <span :title="hoverMessage">Hover to see today's date</span>
     <div v-if="visible">Visible</div>
+
     <ul>
       <li v-for="(todo, index) in todos" :key="index">
         <span>{{ todo.title }}</span>
         <span v-if="todo.completed">✅</span>
       </li>
     </ul>
+
     <button type="button" v-on:click="reverseMessage">Reverse Heading</button>
+    <input type="text" name="age" id="age" v-model="age">
   </div>
 </template>
 
@@ -40,7 +43,8 @@ export default {
           title: "Kill Hitler",
           completed: false
         }
-      ]
+      ],
+      age: 12
     };
   },
   methods: {
