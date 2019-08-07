@@ -2,6 +2,7 @@
   <div class="todo_app">
     <p>Todo App msg = {{ msg }}</p>
     <p>{{ heart }}</p>
+    <span :title="hoverMessage">Hover to see today's date</span>
   </div>
 </template>
 
@@ -13,7 +14,8 @@ export default {
   },
   data() {
     return {
-      heart: "💖"
+      heart: "💖",
+      hoverMessage: new Date().toLocaleString()
     };
   }
 };
