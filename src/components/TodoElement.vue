@@ -1,8 +1,11 @@
 <template>
   <div class="todo-element">
-    <span>{{ todo.title }}</span>
-    <span v-if="todo.completed">✅</span>
-    <span v-else>☑️</span>
+    <div>{{ todo.title }}</div>
+    <div>
+      <span v-if="todo.completed">✅</span>
+      <span v-else>☑️</span>
+      <button type="button" title="Delete" @click="$emit('delete-element', todo.id)">🗑</button>
+    </div>
   </div>
 </template>
 
