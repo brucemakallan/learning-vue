@@ -12,6 +12,7 @@
     "@fortawesome/vue-fontawesome": "^0.1.6",
     "bootstrap-vue": "^2.0.0-rc.27",
     "core-js": "^2.6.5",
+    "uuid": "^3.3.2",
     "vue": "^2.6.10"
   },
   "devDependencies": {

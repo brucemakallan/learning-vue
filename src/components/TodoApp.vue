@@ -29,7 +29,20 @@
       <input type="text" name="age" id="age" class="form-control" v-model="age">
     </div>
 
-    <div class="heading">Binding an object to a Component</div>
+    <div class="heading">Binding an object to a Component: The Todo-List App</div>
+    <form @submit.prevent>
+      <div class="form-group">
+        <input
+          type="text"
+          name="details"
+          id="details"
+          class="form-control"
+          placeholder="Add Todo ..."
+          v-model="todoTitle"
+          @keyup.enter="addTodo($event)"
+        >
+      </div>
+    </form>
     <TodoElement
       v-for="(todo, index) in todos"
       :key="index"
@@ -42,6 +55,7 @@
 
 <script>
 import TodoElement from "./TodoElement.vue";
+import uuid from "uuid";
 
 export default {
   name: "TodoApp",
@@ -71,7 +85,8 @@ export default {
           completed: false
         }
       ],
-      age: 12
+      age: 12,
+      todoTitle: ""
     };
   },
   methods: {
@@ -83,6 +98,19 @@ export default {
     },
     deleteElement(id) {
       this.todos = this.todos.filter(todo => todo.id !== id);
+    },
+    addTodo(e) {
+      const { value } = e.target;
+      this.todoTitle = value;
+      this.todos = [
+        ...this.todos,
+        {
+          id: uuid.v4(),
+          title: value,
+          completed: false
+        }
+      ];
+      this.todoTitle = "";
     }
   },
   components: {
