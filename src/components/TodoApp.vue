@@ -1,19 +1,19 @@
 <template>
   <div class="todo_app">
     <h1>{{ intro }}</h1>
-    <!-- Reading Props -->
+    <div class="heading">Reading Props</div>
     <p>Todo App msg = {{ msg }}</p>
 
-    <!-- Reading data -->
+    <div class="heading">Reading Data values</div>
     <p>{{ heart }}</p>
 
-    <!-- using v-bind -->
+    <div class="heading">Using v-bind</div>
     <span :title="hoverMessage">Hover to see today's date</span>
 
-    <!-- v-if -->
+    <div class="heading">Using v-if</div>
     <div v-if="visible">Visible</div>
 
-    <!-- v-for -->
+    <div class="heading">Using v-for with v-if</div>
     <ul>
       <li v-for="(todo, index) in todos" :key="index">
         <span>{{ todo.title }}</span>
@@ -21,13 +21,15 @@
       </li>
     </ul>
 
-    <!-- Handling events, v-on OR @ -->
-    <button type="button" v-on:click="reverseMessage">Reverse Heading</button>
+    <div class="heading">Handling events</div>
+    <button type="button" class="btn btn-primary btn-sm" v-on:click="reverseMessage">Reverse Heading</button>
 
-    <!-- 2-way binding with v-model -->
-    <input type="text" name="age" id="age" v-model="age">
+    <div class="heading">2-way binding with v-model</div>
+    <div class="form-group">
+      <input type="text" name="age" id="age" class="form-control" v-model="age">
+    </div>
 
-    <!-- Binding an object to a Component -->
+    <div class="heading">Binding an object to a Component</div>
     <TodoElement
       v-for="(todo, index) in todos"
       :key="index"
@@ -47,7 +49,7 @@ export default {
   },
   data() {
     return {
-      intro: "Welcome to the app",
+      intro: "Welcome!",
       heart: "💖",
       hoverMessage: new Date().toLocaleString(),
       visible: true,
@@ -88,5 +90,5 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 </style>

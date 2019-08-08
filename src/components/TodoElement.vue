@@ -2,9 +2,24 @@
   <div class="todo-element">
     <div>{{ todo.title }}</div>
     <div>
-      <span v-if="todo.completed">✅</span>
-      <span v-else>☑️</span>
-      <button type="button" title="Delete" @click="$emit('delete-element', todo.id)">🗑</button>
+      <span v-if="todo.completed">
+        <button
+          type="button"
+          title="Complete"
+          class="icon-button green"
+          @click="$emit('complete-element', todo.id)"
+        >
+          <font-awesome-icon icon="check"/>
+        </button>
+      </span>
+      <button
+        type="button"
+        title="Delete"
+        class="icon-button red"
+        @click="$emit('delete-element', todo.id)"
+      >
+        <font-awesome-icon icon="trash"/>
+      </button>
     </div>
   </div>
 </template>
@@ -23,6 +38,6 @@ export default {
   justify-content: space-between;
   padding: 10px 20px;
   margin: 2px;
-  background-color: #eaeaea;
+  background-color: #eeeeee;
 }
 </style>
