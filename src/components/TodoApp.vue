@@ -35,6 +35,7 @@
       :key="index"
       :todo="todo"
       @delete-element="deleteElement"
+      @mark-as-done="todo.completed = !$event"
     />
   </div>
 </template>

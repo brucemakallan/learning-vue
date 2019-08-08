@@ -42,6 +42,9 @@ div {
   font-weight: 300;
 }
 
+.grey {
+  color: grey;
+}
 .green {
   color: green;
 }
