@@ -1,22 +1,17 @@
 <template>
   <div id="app">
+    <div id="nav">
+      <router-link to="/">Home</router-link>
+      <router-link to="/about">About</router-link>
+      <router-view class="main-content"></router-view>
+    </div>
     <notifications group="notifications-group"/>
-    <TodoApp message="hello there"/>
-    <VuexTodoApp/>
   </div>
 </template>
 
 <script>
-import TodoApp from "./components/TodoApp.vue";
-import VuexTodoApp from "./components/VuexTodoApp.vue";
-
 export default {
-  name: "app",
-
-  components: {
-    TodoApp,
-    VuexTodoApp
-  }
+  name: "app"
 };
 </script>
 
