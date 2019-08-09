@@ -7,8 +7,10 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import store from "./store";
+import Notifications from 'vue-notification'
 
 Vue.use(BootstrapVue)
+Vue.use(Notifications)
 library.add(faTrash, faCheck)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.config.productionTip = false

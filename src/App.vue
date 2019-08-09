@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <notifications group="notifications-group"/>
     <TodoApp message="hello there"/>
     <VuexTodoApp/>
   </div>

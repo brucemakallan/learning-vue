@@ -1,3 +1,4 @@
+import Vue from 'vue'
 import axios from 'axios'
 
 const API = 'https://jsonplaceholder.typicode.com/todos?_limit=5'
@@ -20,7 +21,13 @@ export default {
       await axios.get(API).then((response) => {
         commit('setAllTodos', response.data)
       }).catch((error) => {
-        console.log(error);
+        Vue.notify({
+          group: 'notifications-group',
+          type: 'error',
+          duration: 3000,
+          title: 'Error',
+          text: error.message
+        })
       })
     }
   },
