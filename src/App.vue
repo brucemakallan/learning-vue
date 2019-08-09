@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <TodoApp msg="hello there"/>
+    <TodoApp message="hello there"/>
   </div>
 </template>
 
@@ -9,6 +9,7 @@ import TodoApp from "./components/TodoApp.vue";
 
 export default {
   name: "app",
+
   components: {
     TodoApp
   }

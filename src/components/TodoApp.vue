@@ -1,8 +1,9 @@
 <template>
   <div class="todo_app">
     <h1>{{ intro }}</h1>
+
     <div class="heading">Reading Props</div>
-    <p>Todo App msg = {{ msg }}</p>
+    <p>Todo App message = {{ message }}</p>
 
     <div class="heading">Reading Data values</div>
     <p>{{ heart }}</p>
@@ -43,7 +44,7 @@
         >
       </div>
     </form>
-    <TodoElement
+    <TodoAppElement
       v-for="(todo, index) in todos"
       :key="index"
       :todo="todo"
@@ -54,20 +55,28 @@
 </template>
 
 <script>
-import TodoElement from "./TodoElement.vue";
+import TodoAppElement from "./TodoAppElement.vue";
 import uuid from "uuid";
 
 export default {
   name: "TodoApp",
+
   props: {
-    msg: String
+    message: {
+      type: String,
+      required: true,
+      validator: value => value.length > 3
+    }
   },
+
   data() {
     return {
       intro: "Welcome!",
       heart: "💖",
       hoverMessage: new Date().toLocaleString(),
       visible: true,
+      age: 12,
+      todoTitle: "",
       todos: [
         {
           id: 1,
@@ -84,11 +93,10 @@ export default {
           title: "Kill Hitler",
           completed: false
         }
-      ],
-      age: 12,
-      todoTitle: ""
+      ]
     };
   },
+
   methods: {
     reverseMessage() {
       this.intro = this.intro
@@ -96,9 +104,11 @@ export default {
         .reverse()
         .join("");
     },
+
     deleteElement(id) {
       this.todos = this.todos.filter(todo => todo.id !== id);
     },
+
     addTodo(e) {
       const { value } = e.target;
       this.todoTitle = value;
@@ -113,8 +123,9 @@ export default {
       this.todoTitle = "";
     }
   },
+
   components: {
-    TodoElement
+    TodoAppElement
   }
 };
 </script>

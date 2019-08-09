@@ -25,7 +25,10 @@
 <script>
 export default {
   props: {
-    todo: Object
+    todo: {
+      type: Object,
+      required: true
+    }
   }
 };
 </script>
