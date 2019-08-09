@@ -1,17 +1,20 @@
 <template>
   <div id="app">
     <TodoApp message="hello there"/>
+    <VuexTodoApp/>
   </div>
 </template>
 
 <script>
 import TodoApp from "./components/TodoApp.vue";
+import VuexTodoApp from "./components/VuexTodoApp.vue";
 
 export default {
   name: "app",
 
   components: {
-    TodoApp
+    TodoApp,
+    VuexTodoApp
   }
 };
 </script>
@@ -59,7 +62,7 @@ div {
 
   .heading {
     padding: 5px;
-    margin-top: 40px;
+    margin-top: 50px;
     background-color: rgb(195, 226, 236);
   }
   .icon {
