@@ -44,13 +44,15 @@
         >
       </div>
     </form>
-    <TodoAppElement
-      v-for="(todo, index) in todos"
-      :key="index"
-      :todo="todo"
-      @delete-element="deleteElement"
-      @mark-as-done="todo.completed = !$event"
-    />
+    <transition-group name="bounceLeft" tag="div">
+      <TodoAppElement
+        v-for="(todo, index) in todos"
+        :key="index"
+        :todo="todo"
+        @delete-element="deleteElement"
+        @mark-as-done="todo.completed = !$event"
+      />
+    </transition-group>
   </div>
 </template>
 
