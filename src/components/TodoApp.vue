@@ -46,8 +46,8 @@
     </form>
     <transition-group name="bounceLeft" tag="div">
       <TodoAppElement
-        v-for="(todo, index) in todos"
-        :key="index"
+        v-for="todo in todos"
+        :key="todo.id"
         :todo="todo"
         @delete-element="deleteElement"
         @mark-as-done="todo.completed = !$event"
@@ -115,12 +115,12 @@ export default {
       const { value } = e.target;
       this.todoTitle = value;
       this.todos = [
-        ...this.todos,
         {
           id: uuid.v4(),
           title: value,
           completed: false
-        }
+        },
+        ...this.todos
       ];
       this.todoTitle = "";
     }
