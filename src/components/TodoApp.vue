@@ -44,13 +44,14 @@
         >
       </div>
     </form>
-    <transition-group name="bounceLeft" tag="div">
+    <transition-group name="list-complete" tag="div">
       <TodoAppElement
         v-for="todo in todos"
         :key="todo.id"
         :todo="todo"
         @delete-element="deleteElement"
         @mark-as-done="todo.completed = !$event"
+        class="list-complete-item"
       />
     </transition-group>
   </div>
@@ -133,4 +134,15 @@ export default {
 </script>
 
 <style lang="scss">
+.list-complete-item {
+  transition: all 1s;
+}
+.list-complete-enter,
+.list-complete-leave-to {
+  opacity: 0;
+  transform: translateX(-500px);
+}
+.list-complete-leave-active {
+  position: absolute;
+}
 </style>
